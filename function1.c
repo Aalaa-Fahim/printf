@@ -9,6 +9,7 @@
  */
 int print_char(va_list l, flags_t *p)
 {
+	(void)p;
 	_putchar(va_arg(l, int));
 	return (1);
 }
@@ -22,11 +23,13 @@ int print_char(va_list l, flags_t *p)
  */
 int print_string(va_list l, flags_t *p)
 {
-	char *s = va_arg(l, char *);
+	char *str = va_arg(l, char *);
 
-	if (!s)
-		s = "(null)";
-	return (_puts(s));
+	(void)p;
+
+	if (!str)
+		str = "(null)";
+	return (_puts(str));
 }
 
 /**
@@ -38,5 +41,7 @@ int print_string(va_list l, flags_t *p)
 */
 int print_percent(va_list l, flags_t *p)
 {
+	(void)p;
+	(void)l;
 	return (_putchar('%'));
 }
