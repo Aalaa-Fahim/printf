@@ -5,17 +5,17 @@
  * @value: input number
  * @itsbase: input base
  * @itsflag: a flag if hexa values need to be lowercase
- * @p: pointer
+ *
  * Return: a string
  */
-char *convert(long int value, int itsbase, int itsflag, flags_t *p)
+char *convert(long int value, int itsbase, int itsflag)
 {
 	char sign = 0;
 	static char *arr;
 	unsigned long n = value;
 	static char buffer[50];
 	char *pointer;
-	(void)p;
+	/* (void)p; */
 
 	sign = (value < 0 && !(itsflag & UNSIGNED)) ? '-' : 0;
 	n = (value < 0 && !(itsflag & UNSIGNED)) ? -value : value;

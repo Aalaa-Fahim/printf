@@ -24,7 +24,8 @@ int (*handle_print(char ch))(va_list, flags_t *)
 	{'S', print_non_printable},
 	{'p', print_pointer}
 	};
-	int flags = 14, i;
+	int flags = 14;
+	register int i;
 
 	for (i = 0; i < flags; i++)
 		if (print_func[i].c == ch)
