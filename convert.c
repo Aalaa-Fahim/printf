@@ -27,6 +27,6 @@ char *convert(long int value, int itsbase, int itsflag, flags_t *p)
 	*--pointer = arr[n % itsbase];
 	n /= itsbase;
 }
-	*(sign ? --pointer : pointer) = sign;
+	sign ? (*--pointer = sign, --pointer) : pointer;
 	return (pointer);
 }

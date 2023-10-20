@@ -6,6 +6,10 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
+#include <string.h>
+
+#define UNSIGNED 1
+#define LOWERCASE 2
 
 #define BUFF_SIZE 1024
 
@@ -30,6 +34,7 @@ typedef struct flags
 	int hash;
 	int minus;
 	int zero;
+	int unsign;
 	int precision;
 	int width;
 	int modifier_of_h;

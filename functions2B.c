@@ -8,7 +8,7 @@
 
 int print_number_to_left(char *text, flags_t *p)
 {
-	unsigned int n = 0, rat = 0, rat2 = 0, i = strlen(text);
+	 int n = 0, rat = 0, rat2 = 0, i = strlen(text);
 	char paddd = '0';
 
 	if (p->space && !p->plus && !p->zero)

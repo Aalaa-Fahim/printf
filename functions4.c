@@ -7,27 +7,30 @@
  * Return: the printed chars
  */
 
-int print_rot13(va_list l, flags_t *p)
+	int print_rot13(va_list l, flags_t *p)
 {
 	char array[] = "NOPQRSTUWXYZABCDEFHGIJKLM  nopqrsuexyzabcdefghijklm";
-	int j, start;
-	int total = 0;
-	char *abc = va_arg(l, char *);
+	int i, j, total = 0;
+	char *s = va_arg(l, char *);
 	(void)p;
-	while (abc[j])
-{
-	if ((abc[j] >= 'A' && abc[j] <= 'Z') || (abc[j] >= 'a' && abc[j] <= 'z'))
-{
-	start = abc[j] - 'A';
-	total = total + _putchar(array[start]);
 
-}
-	else
+	for (i = 0; s[i] != '\0'; i++)
 {
-	total = total + _putchar(abc[j]);
-	j++;
-
+	for (j = 0; array[j] != '\0'; j++)
+{
+	if (s[i] == array[j])
+{
+	total += _putchar(array[j + 13]);
+	break;
 }
+	else if (s[i] == array[j + 13])
+{
+	total += _putchar(array[j]);
+	break;
+}
+}
+	if (array[j] == '\0')
+	total += _putchar(s[i]);
 }
 	return (total);
 }
@@ -41,8 +44,9 @@ int print_rot13(va_list l, flags_t *p)
 
 	int print_reversed(va_list l, flags_t *p)
 {
-	int length, total = 0;
+	int total = 0;
 	char *strng = va_arg(l, char *);
+	int length;
 	(void)p;
 	if (strng)
 {
