@@ -7,7 +7,7 @@
  * Return: the printed chars
  */
 
-	int print_rot13(va_list l, flags_t *p)
+int print_rot13(va_list l, flags_t *p)
 {
 	char array[] = "NOPQRSTUWXYZABCDEFHGIJKLM  nopqrsuexyzabcdefghijklm";
 	int i, j, total = 0;
@@ -40,9 +40,9 @@
  * @l: list of arguments
  * @p: pointer
  * Return: the printed chars
- */
+*/
 
-	int print_reversed(va_list l, flags_t *p)
+int print_reversed(va_list l, flags_t *p)
 {
 	int total = 0;
 	char *strng = va_arg(l, char *);
@@ -60,11 +60,14 @@
 	strng--;
 	while (length > 0)
 {
+	total = total + _putchar(*strng);
 	length--;
 	strng--;
 
 }
-	total = total + _putchar(*strng);
+
 }
 	return (total);
 }
+
+
