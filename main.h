@@ -59,7 +59,7 @@ int print_the_number(char *text, flags_t *p);
 int _printf(const char *format, ...);
 int (*handle_print(char ch))(va_list, flags_t *);
 int get_flags(char c, flags_t *p);
-char *convert(long int value, int itsbase, int itsflag);
+char *convert(unsigned long int num, int base, int lowercase);
 int print_char(va_list l, flags_t *p);
 int print_string(va_list l, flags_t *p);
 int print_percent(va_list l, flags_t *p);
