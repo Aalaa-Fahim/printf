@@ -1,5 +1,7 @@
 #include "main.h"
 
+#include "main.h"
+
 /**
  * handle_print - selects, prints an argument based on its type
  * @ch: character that holds the conversion specifier
@@ -9,12 +11,12 @@
 int (*handle_print(char ch))(va_list, flags_t *)
 {
 	h print_func[] = {
-	{'i', print_int},
-	{'d', print_int}
+	 {'c', print_char},
+	 {'s', print_string},
+	 {'%', print_percent}
 	/**
-	 * {'c', print_char},
-	 * {'s', print_string},
-	 * {'%', print_percent},
+	 * {'i', print_int},
+	 * {'d', print_int},
 	 * {'i', print_int},
 	 * {'d', print_int},
 	 * {'b', print_binary},
@@ -29,7 +31,7 @@ int (*handle_print(char ch))(va_list, flags_t *)
 	 */
 	};
 
-	int flags = 2;
+	int flags = 3;
 
 	register int i;
 

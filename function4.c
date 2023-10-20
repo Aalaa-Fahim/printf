@@ -1,6 +1,7 @@
 #include "main.h"
 
-/** print_rot13 - prints the rotational of string
+/**
+ * print_rot13 - prints the rotational of string
  * @l: list of arguments
  * @p: pointer
  * Return: the printed chars
@@ -39,7 +40,7 @@ int print_rot13(va_list l, flags_t *p)
  * @l: list of arguments
  * @p: pointer
  * Return: the printed chars
- */     
+ */
 
 int print_reversed(va_list l, flags_t *p)
 {
@@ -64,7 +65,7 @@ int print_reversed(va_list l, flags_t *p)
 	strng--;
 
 }
-    
+
 }
 	return (total);
 }
