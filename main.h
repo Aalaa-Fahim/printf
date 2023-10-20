@@ -34,7 +34,6 @@ typedef struct flags
 	int hash;
 	int minus;
 	int zero;
-	int unsign;
 	int precision;
 	int width;
 	int modifier_of_h;
@@ -58,7 +57,7 @@ int _puts(char *s);
 
 int print_the_number(char *text, flags_t *p);
 int _printf(const char *format, ...);
-int (*handle_print(char c))(va_list, flags_t *);
+int (*handle_print(char ch))(va_list, flags_t *);
 int get_flags(char c, flags_t *p);
 char *convert(long int value, int itsbase, int itsflag, flags_t *p);
 int print_char(va_list l, flags_t *p);

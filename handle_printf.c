@@ -2,11 +2,11 @@
 
 /**
  * handle_print - selects, prints an argument based on its type
- * @c: character that holds the conversion specifier
+ * @ch: character that holds the conversion specifier
  *
  * Return: a pointer to the matching function
  */
-int (*handle_print(char c))(va_list, flags_t *)
+int (*handle_print(char ch))(va_list, flags_t *)
 {
 	h print_func[] = {
 	{'c', print_char},
@@ -22,13 +22,12 @@ int (*handle_print(char c))(va_list, flags_t *)
 	{'R', print_rot13},
 	{'r', print_reversed},
 	{'S', print_non_printable},
-	{'p', print_pointer},
-	{NULL, NULL}
+	{'p', print_pointer}
 	};
-	int flags = 15, i;
+	int flags = 14, i;
 
 	for (i = 0; i < flags; i++)
-		if (print_func[i].c == c)
+		if (print_func[i].c == ch)
 			return (print_func[i].p);
 	return (NULL);
 }

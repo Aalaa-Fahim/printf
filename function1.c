@@ -37,4 +37,6 @@ int print_string(va_list l, flags_t *p)
  * Return: number of chars printed
 */
 int print_percent(va_list l, flags_t *p)
+{
 	return (_putchar('%'));
+}
