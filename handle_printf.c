@@ -11,18 +11,18 @@ int (*handle_print(char ch))(va_list, flags_t *)
 	h print_func[] = {
 	{'c', print_char},
 	{'s', print_string},
-	{'%', print_percent}
+	{'%', print_percent},
+	{'i', print_int},
+	{'d', print_int},
+	{'b', print_binary},
+	{'S', print_non_printable}
 	/**
-	 * {'i', print_int},
-	 * {'d', print_int},
 	 * {'u', print_unsigned},
 	 * {'x', print_HEXA},
 	 * {'X', print_hexa},
-	 * {'b', print_binary},
 	 * {'o', print_octal},
 	 * {'R', print_rot13},
 	 * {'r', print_reversed},
-	 * {'S', print_non_printable},
 	 * {'p', print_pointer}
 	 */
 	};
