@@ -27,7 +27,7 @@ int (*handle_print(char ch))(va_list, flags_t *)
 	 */
 	};
 
-	int flags = 14;
+	int flags = 5;
 
 	register int i;
 
