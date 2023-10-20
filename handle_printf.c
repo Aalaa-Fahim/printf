@@ -9,10 +9,12 @@
 int (*handle_print(char ch))(va_list, flags_t *)
 {
 	h print_func[] = {
-	{'c', print_char},
-	{'s', print_string},
-	{'%', print_percent}
+	{'i', print_int},
+	{'d', print_int}
 	/**
+	 * {'c', print_char},
+	 * {'s', print_string},
+	 * {'%', print_percent},
 	 * {'i', print_int},
 	 * {'d', print_int},
 	 * {'b', print_binary},
@@ -27,7 +29,7 @@ int (*handle_print(char ch))(va_list, flags_t *)
 	 */
 	};
 
-	int flags = 3;
+	int flags = 2;
 
 	register int i;
 
